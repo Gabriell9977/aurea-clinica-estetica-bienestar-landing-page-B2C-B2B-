@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aurea • Clínica Estética, Salud & Bienestar en Venezuela</title>
+    <meta name="description" content="Medicina estética avanzada y bienestar femenino en Venezuela. Resultados naturales avalados por especialistas y tecnología FDA en un entorno de armonía.">
+    
+    <!-- Cabeceras de Seguridad Web (OWASP Hardening) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com https://placehold.co data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+    <!-- Google Fonts: Cormorant Garamond + Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        pearl: '#FFFDFD',
+                        blush: {
+                            50: '#FDF6F8',
+                            100: '#FCEEF2',
+                            200: '#F8DCE5',
+                            300: '#F1C2D1',
+                            400: '#E29EB4',
+                            500: '#C97B93',
+                            600: '#A95D75',
+                        },
+                        plum: {
+                            900: '#3B2C32',
+                            700: '#5C4951',
+                            500: '#846F78',
+                            300: '#B5A3AB',
+                        },
+                        champagne: {
+                            100: '#FAF5F0',
+                            300: '#E7D5C5',
+                            500: '#C7A68B',
+                        }
+                    },
+                    boxShadow: {
+                        'pastel': '0 20px 50px -15px rgba(201, 123, 147, 0.14)',
+                        'soft': '0 10px 30px -10px rgba(59, 44, 50, 0.06)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Hoja de Estilos Modular -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="antialiased selection:bg-blush-200 selection:text-plum-900">
+
+    <!-- =====================================================================
+         PANEL EJECUTIVO B2B (MODO DUEÑO DE CLÍNICA - PORTAFOLIO REAL)
+    ====================================================================== -->
+    <aside id="b2b-executive-drawer" aria-label="Panel Ejecutivo B2B" class="hidden bg-blush-50 border-b border-blush-200/80 transition-all duration-300 relative z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-blush-200/70">
+                <div>
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-medium bg-white/80 text-blush-600 border border-blush-200 mb-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blush-500 animate-pulse"></span>
+                        MODO AUDITORÍA B2B • ARQUITECTURA DE CONVERSIÓN
+                    </span>
+                    <h2 class="font-serif text-2xl sm:text-3xl font-normal text-plum-900">
+                        Sistema de Adquisición de Pacientes para Clínicas en Venezuela
+                    </h2>
+                    <p class="text-plum-700 text-sm mt-1 max-w-3xl font-light">
+                        Diseñada para convertir tráfico de Instagram y TikTok en citas confirmadas sin fricción. Simula tu rentabilidad o edita los protocolos en tiempo real.
+                    </p>
+                </div>
+                <button type="button" id="btn-close-b2b" class="liquid-btn px-5 py-2.5 rounded-full text-plum-900 text-xs font-medium tracking-wide cursor-pointer self-start lg:self-auto">
+                    Volver a Vista Paciente (B2C)
+                </button>
+            </div>
+
+            <!-- Grid de 3 pilares B2B -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
+                <!-- 1. Calculadora ROI -->
+                <div class="liquid-glass rounded-3xl p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-serif text-xl font-medium text-plum-900">Proyección de ROI Mensual</h3>
+                        <span class="text-[11px] text-blush-600 font-medium bg-blush-100 px-2.5 py-1 rounded-full">Conv. Est. 12%</span>
+                    </div>
+                    <p class="text-xs text-plum-500 mb-4">Simula tu inversión en Meta Ads con esta landing page:</p>
+                    
+                    <div class="space-y-3.5">
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <label for="roi-adspend" class="text-plum-700">Presupuesto Ads / mes:</label>
+                                <span id="roi-adspend-label" class="font-medium text-plum-900">$400 USD</span>
+                            </div>
+                            <input type="range" id="roi-adspend" min="200" max="2500" step="100" value="400" class="w-full accent-blush-500 cursor-pointer">
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <label for="roi-ticket" class="text-plum-700">Ticket promedio tratamiento:</label>
+                                <span id="roi-ticket-label" class="font-medium text-plum-900">$180 USD</span>
+                            </div>
+                            <input type="range" id="roi-ticket" min="80" max="600" step="20" value="180" class="w-full accent-blush-500 cursor-pointer">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-2.5 mt-5 pt-4 border-t border-blush-200/60 text-center">
+                        <div class="bg-white/60 p-2.5 rounded-2xl">
+                            <span class="block text-[11px] text-plum-500">Consultas/Mes</span>
+                            <span id="roi-leads" class="font-serif text-xl font-medium text-plum-900">95</span>
+                        </div>
+                        <div class="bg-white/60 p-2.5 rounded-2xl">
+                            <span class="block text-[11px] text-plum-500">Pacientes Cierre</span>
+                            <span id="roi-patients" class="font-serif text-xl font-medium text-blush-600">24</span>
+                        </div>
+                        <div class="bg-blush-100/80 border border-blush-200 p-2.5 rounded-2xl">
+                            <span class="block text-[11px] text-blush-600">Retorno Est.</span>
+                            <span id="roi-revenue" class="font-serif text-xl font-semibold text-blush-600">$4,320</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Integraciones Libres y Reales -->
+                <div class="liquid-glass rounded-3xl p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-serif text-xl font-medium text-plum-900 mb-3">Integraciones Listas para Operar</h3>
+                        <ul class="space-y-2.5 text-xs">
+                            <li class="flex items-center justify-between gap-2 bg-white/65 px-3.5 py-2.5 rounded-2xl">
+                                <span class="text-plum-900">Enlace Directo WhatsApp Business + Mensaje Pre-llenado</span>
+                                <span class="text-blush-600 font-medium shrink-0">Gratis</span>
+                            </li>
+                            <li class="flex items-center justify-between gap-2 bg-white/65 px-3.5 py-2.5 rounded-2xl">
+                                <span class="text-plum-900">Meta Pixel (Seguimiento de campañas de Ads)</span>
+                                <span class="text-blush-600 font-medium shrink-0">Gratis</span>
+                            </li>
+                            <li class="flex items-center justify-between gap-2 bg-white/65 px-3.5 py-2.5 rounded-2xl">
+                                <span class="text-plum-900">Google Analytics 4 (Estadísticas de tráfico web)</span>
+                                <span class="text-blush-600 font-medium shrink-0">Gratis</span>
+                            </li>
+                            <li class="flex items-center justify-between gap-2 bg-white/65 px-3.5 py-2.5 rounded-2xl">
+                                <span class="text-plum-900">Métodos de Pago: Pago Móvil, Zelle, Binance, PayPal, Cashea y Divisas</span>
+                                <span class="text-blush-600 font-medium shrink-0">Activo</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="text-[11px] text-plum-500 mt-3">
+                        * Herramientas 100% gratuitas, listas para configurar en minutos.
+                    </p>
+                </div>
+
+                <!-- 3. Editor en Vivo (Mini-CMS) -->
+                <div class="liquid-glass rounded-3xl p-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-serif text-xl font-medium text-plum-900">Autonomía Total (CMS en Vivo)</h3>
+                        <span class="text-[11px] bg-white/80 text-blush-600 px-2.5 py-0.5 rounded-full border border-blush-200">Sin código</span>
+                    </div>
+                    <p class="text-xs text-plum-500 mb-3">Modifica precios o etiquetas de cualquier ritual al instante:</p>
+                    
+                    <div class="space-y-2.5">
+                        <div>
+                            <label for="cms-treatment-select" class="block text-[11px] text-plum-700 mb-1">Protocolo a editar:</label>
+                            <select id="cms-treatment-select" class="w-full bg-white/80 border border-blush-200 rounded-2xl px-3.5 py-2 text-xs text-plum-900 focus:outline-none focus:border-blush-400">
+                                <option value="0">01. Armonización Facial Sutil</option>
+                                <option value="1">02. Piel de Porcelana & Láser</option>
+                                <option value="2">03. Bioestimulación de Colágeno</option>
+                                <option value="3">04. Contorno & Bienestar Corporal</option>
+                            </select>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label for="cms-price-input" class="block text-[11px] text-plum-700 mb-1">Inversión:</label>
+                                <input type="text" id="cms-price-input" value="Desde $160" maxlength="30" class="w-full bg-white/80 border border-blush-200 rounded-2xl px-3.5 py-2 text-xs text-plum-900 focus:outline-none focus:border-blush-400">
+                            </div>
+                            <div>
+                                <label for="cms-badge-input" class="block text-[11px] text-plum-700 mb-1">Etiqueta:</label>
+                                <input type="text" id="cms-badge-input" value="Ritual Estrella" maxlength="30" class="w-full bg-white/80 border border-blush-200 rounded-2xl px-3.5 py-2 text-xs text-plum-900 focus:outline-none focus:border-blush-400">
+                            </div>
+                        </div>
+                        <button type="button" id="btn-apply-cms" class="liquid-btn w-full mt-1 text-plum-900 font-medium text-xs py-2.5 rounded-full cursor-pointer">
+                            Aplicar Cambios en Vivo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- =====================================================================
+         HEADER EDITORIAL TRANSLÚCIDO
+    ====================================================================== -->
+    <header class="fixed top-0 inset-x-0 z-40 transition-all duration-300 bg-white/55 backdrop-blur-xl border-b border-white/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Navegación Izquierda Fina -->
+            <nav aria-label="Navegación Principal" class="hidden lg:flex items-center gap-8 text-[11px] font-normal uppercase tracking-[0.22em] text-plum-700">
+                <a href="#rituales" class="hover:text-blush-600 transition">Medicina Estética</a>
+                <a href="#rituales" class="hover:text-blush-600 transition">Rituales</a>
+                <a href="#resultados" class="hover:text-blush-600 transition">Resultados</a>
+            </nav>
+
+            <!-- Logotipo Central Delicado -->
+            <a href="#" class="flex flex-col items-center group focus:outline-none">
+                <span class="font-serif text-3xl sm:text-[34px] font-normal tracking-[0.18em] text-plum-900 lowercase leading-none">
+                    aurea
+                </span>
+                <span class="text-[9px] uppercase tracking-[0.32em] text-blush-500 mt-1 font-normal">
+                    estética & bienestar
+                </span>
+            </a>
+
+            <!-- Acciones Derecha -->
+            <div class="flex items-center gap-3 sm:gap-5">
+                <button type="button" id="btn-toggle-b2b-header" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/60 hover:bg-white/90 border border-blush-200/80 text-plum-700 text-[11px] tracking-wider transition cursor-pointer">
+                    <span class="w-1.5 h-1.5 rounded-full bg-blush-400"></span>
+                    <span>Vista Clínica (ROI)</span>
+                </button>
+                <a href="#agendar" class="liquid-btn px-5 py-2.5 rounded-full text-plum-900 text-xs font-normal tracking-widest uppercase">
+                    Valoración
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- =================================================================
+             1. HERO EDITORIAL PASTEL & LIQUID GLASS
+        ================================================================== -->
+        <section aria-labelledby="hero-heading" class="relative min-h-screen pt-24 pb-16 flex items-center overflow-hidden bg-gradient-to-br from-pearl via-blush-50 to-blush-100">
+            <div class="pastel-orb w-[500px] h-[500px] bg-blush-200/45 -top-20 -left-20"></div>
+            <div class="pastel-orb w-[450px] h-[450px] bg-champagne-100/80 bottom-0 right-1/4"></div>
+
+            <!-- Fotografía Editorial Femenina Luminosa -->
+            <div class="absolute inset-y-0 right-0 w-full lg:w-[58%] z-0 pointer-events-none">
+                <img 
+                    id="hero-bg-image"
+                    src="img/armonizacion-facial.webp" 
+                    alt="Armonía y belleza natural femenina AUREA"
+                    class="w-full h-full object-cover object-center opacity-55 lg:opacity-85 transition-opacity duration-700"
+                >
+                <div class="absolute inset-0 bg-gradient-to-r from-pearl via-blush-50/92 to-transparent lg:via-blush-50/65"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-pearl via-transparent to-pearl/50"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-5 sm:px-8 relative z-10 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    <!-- Columna Izquierda -->
+                    <div class="lg:col-span-7">
+                        <p class="text-[11px] uppercase tracking-[0.28em] text-blush-500 mb-4 font-normal">
+                            Medicina Estética Avanzada • Venezuela
+                        </p>
+
+                        <h1 id="hero-heading" class="font-serif text-4xl sm:text-6xl lg:text-[64px] font-light text-plum-900 leading-[1.08] tracking-tight mb-8">
+                            Realza tu belleza <br>
+                            <span class="italic font-normal text-blush-600">natural y armónica</span>
+                        </h1>
+
+                        <!-- Lista Interactiva de Tratamientos -->
+                        <div class="pl-5 border-l border-blush-200/80 space-y-2.5 sm:space-y-3 mb-9" id="hero-ritual-list" role="tablist" aria-label="Tratamientos destacados">
+                            <button type="button" data-ritual-index="0" class="hero-ritual-item active block text-left font-serif text-2xl sm:text-3xl font-light text-plum-900 cursor-pointer focus:outline-none">
+                                Armonización facial sutil
+                            </button>
+                            <button type="button" data-ritual-index="1" class="hero-ritual-item block text-left font-serif text-2xl sm:text-3xl font-light text-plum-700 cursor-pointer focus:outline-none">
+                                Bioestimulación de colágeno
+                            </button>
+                            <button type="button" data-ritual-index="2" class="hero-ritual-item block text-left font-serif text-2xl sm:text-3xl font-light text-plum-700 cursor-pointer focus:outline-none">
+                                Piel de porcelana láser
+                            </button>
+                            <button type="button" data-ritual-index="3" class="hero-ritual-item block text-left font-serif text-2xl sm:text-3xl font-light text-plum-700 cursor-pointer focus:outline-none">
+                                Hidratación labial & luminosidad
+                            </button>
+                            <button type="button" data-ritual-index="4" class="hero-ritual-item block text-left font-serif text-2xl sm:text-3xl font-light text-plum-700 cursor-pointer focus:outline-none">
+                                Rejuvenecimiento corporal
+                            </button>
+                        </div>
+
+                        <!-- Cápsula Liquid Glass Dinámica -->
+                        <div id="hero-dynamic-capsule" aria-live="polite" class="liquid-glass rounded-3xl p-4 sm:p-5 max-w-md mb-8 transition-all duration-300">
+                            <div class="flex items-center justify-between text-[11px] uppercase tracking-widest text-blush-600 mb-1.5">
+                                <span id="hero-cap-tag">Sin cirugía • Resultados naturales</span>
+                                <span id="hero-cap-time">45 min</span>
+                            </div>
+                            <p id="hero-cap-desc" class="text-sm text-plum-700 font-light leading-relaxed">
+                                Equilibrio delicado de facciones mediante ácido hialurónico de última generación, respetando siempre tu expresión única.
+                            </p>
+                        </div>
+
+                        <!-- Botones Liquid Glass -->
+                        <div class="flex flex-wrap items-center gap-4">
+                            <a href="#agendar" data-track="Hero_Agendar_CTA" class="liquid-btn px-8 py-4 rounded-full text-plum-900 text-xs sm:text-sm font-normal tracking-[0.16em] uppercase inline-flex items-center gap-3">
+                                <span>Agendar Valoración</span>
+                                <svg class="w-4 h-4 text-blush-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg>
+                            </a>
+                            <a href="https://wa.me/584120000000?text=Hola%20AUREA%2C%20quisiera%20agendar%20una%20valoraci%C3%B3n%20est%C3%A9tica%20personalizada." target="_blank" rel="noopener noreferrer" data-track="Hero_WhatsApp_CTA" class="px-6 py-4 rounded-full bg-white/45 hover:bg-white/80 backdrop-blur-md border border-white/80 text-plum-700 text-xs sm:text-sm font-light tracking-wider transition inline-flex items-center gap-2">
+                                <span>Consulta por WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha -->
+                    <div class="lg:col-span-5 flex lg:justify-end items-end self-end">
+                        <div class="liquid-glass rounded-3xl p-5 sm:p-6 max-w-xs w-full">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-[10px] uppercase tracking-[0.2em] text-blush-600">Excelencia Clínica</span>
+                                <span class="text-blush-500 text-xs" aria-label="Calificación 4.9 de 5 estrellas">★★★★★ 4.9</span>
+                            </div>
+                            <p class="font-serif italic text-xl text-plum-900 leading-snug mb-3">
+                                “La delicadeza de un ritual de bienestar con el rigor de la medicina estética.”
+                            </p>
+                            <div class="flex items-center justify-between pt-3 border-t border-blush-200/50 text-xs text-plum-500">
+                                <span>+3,200 pacientes atendidas</span>
+                                <span class="text-blush-600">Insumos FDA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================
+             2. ESCAPARATE SENSORIAL DE PROTOCOLOS
+        ================================================================== -->
+        <section id="rituales" aria-labelledby="rituales-heading" class="relative py-20 sm:py-28 bg-pearl overflow-hidden">
+            <div class="pastel-orb w-[420px] h-[420px] bg-blush-100/70 top-10 right-0"></div>
+            <div class="pastel-orb w-[380px] h-[380px] bg-champagne-100/70 bottom-10 left-0"></div>
+
+            <div class="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
+                <div class="max-w-2xl mb-14 reveal">
+                    <span class="text-[11px] uppercase tracking-[0.26em] text-blush-500 block mb-2.5">Protocolos Exclusivos</span>
+                    <h2 id="rituales-heading" class="font-serif text-3xl sm:text-5xl font-light text-plum-900 leading-tight mb-4">
+                        Rituales diseñados para <span class="italic text-blush-600">despertar tu luz</span>
+                    </h2>
+                    <p class="text-plum-700 text-base font-light leading-relaxed">
+                        Selecciona cada protocolo para explorar sus beneficios sensoriales, tiempos de sesión y resultados esperados.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    <div class="lg:col-span-5 space-y-3" id="ritual-selector-tabs"></div>
+                    <div class="lg:col-span-7">
+                        <div id="ritual-showcase-panel" aria-live="polite" class="liquid-glass rounded-[2rem] p-6 sm:p-10 shadow-pastel relative overflow-hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================
+             3. AUTORIDAD Y SEGURIDAD MÉDICA
+        ================================================================== -->
+        <section id="autoridad" aria-labelledby="autoridad-heading" class="relative py-20 sm:py-28 bg-gradient-to-b from-blush-50/70 to-pearl border-y border-blush-100">
+            <div class="max-w-7xl mx-auto px-5 sm:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal">
+                    <div class="lg:col-span-5">
+                        <div class="liquid-glass rounded-[2.25rem] p-5 sm:p-6">
+                            <div class="rounded-[1.75rem] overflow-hidden aspect-[4/4] mb-5 bg-blush-100">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=800&q=85" 
+                                    alt="Dra. Valeria Mendoza - Directora Médica AUREA"
+                                    loading="lazy"
+                                    class="w-full h-full object-cover object-top"
+                                >
+                            </div>
+                            <div class="flex items-end justify-between gap-4 px-1">
+                                <div>
+                                    <span class="text-[10px] uppercase tracking-[0.22em] text-blush-500">Dirección Médica</span>
+                                    <h3 class="font-serif text-2xl font-normal text-plum-900 mt-0.5">Dra. Valeria Mendoza</h3>
+                                    <p class="text-xs text-plum-700 font-light mt-0.5">Médico Cirujano • Especialista en Medicina Estética</p>
+                                    <p class="text-[11px] text-plum-500 mt-1">Registro MPPS • Sociedad Venezolana de Medicina Estética</p>
+                                </div>
+                                <div class="liquid-glass-rose px-3.5 py-2 rounded-2xl text-center shrink-0">
+                                    <span class="block font-serif text-xl text-blush-600 leading-none">12+</span>
+                                    <span class="text-[9px] uppercase tracking-wider text-plum-700">Años Exp.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <span class="text-[11px] uppercase tracking-[0.26em] text-blush-500 block mb-2.5">Ciencia & Delicadeza</span>
+                        <h2 id="autoridad-heading" class="font-serif text-3xl sm:text-5xl font-light text-plum-900 leading-tight mb-5">
+                            Tu piel merece rigor médico y un <span class="italic text-blush-600">toque sutil</span>
+                        </h2>
+                        <p class="text-plum-700 text-base font-light leading-relaxed mb-8">
+                            En <strong>aurea</strong> entendemos que cada rostro tiene una historia. Diseñamos planes personalizados que respetan tu fisonomía natural bajo los más altos protocolos internacionales.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="liquid-glass rounded-3xl p-5">
+                                <span class="text-blush-500 text-sm font-bold block mb-2" aria-hidden="true">•</span>
+                                <h3 class="font-serif text-xl font-medium text-plum-900 mb-1">Insumos Certificados</h3>
+                                <p class="text-xs sm:text-sm text-plum-700 font-light leading-relaxed">Laboratorios europeos y americanos originales (Allergan, Galderma, Merz) abiertos frente a ti.</p>
+                            </div>
+
+                            <div class="liquid-glass rounded-3xl p-5">
+                                <span class="text-blush-500 text-sm font-bold block mb-2" aria-hidden="true">•</span>
+                                <h3 class="font-serif text-xl font-medium text-plum-900 mb-1">Tecnología FDA</h3>
+                                <p class="text-xs sm:text-sm text-plum-700 font-light leading-relaxed">Equipos dermatológicos aprobados para máxima eficacia y confort sin tiempos de baja.</p>
+                            </div>
+
+                            <div class="liquid-glass rounded-3xl p-5">
+                                <span class="text-blush-500 text-sm font-bold block mb-2" aria-hidden="true">•</span>
+                                <h3 class="font-serif text-xl font-medium text-plum-900 mb-1">Estética Silenciosa</h3>
+                                <p class="text-xs sm:text-sm text-plum-700 font-light leading-relaxed">Resultados frescos y descansados: nadie notará el procedimiento, todos notarán tu luz.</p>
+                            </div>
+
+                            <div class="liquid-glass rounded-3xl p-5">
+                                <span class="text-blush-500 text-sm font-bold block mb-2" aria-hidden="true">•</span>
+                                <h3 class="font-serif text-xl font-medium text-plum-900 mb-1">Acompañamiento Cercano</h3>
+                                <p class="text-xs sm:text-sm text-plum-700 font-light leading-relaxed">Seguimiento médico personalizado por WhatsApp y cita de control incluida.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================
+             4. PRUEBA SOCIAL (ANTES/DESPUÉS REAL + TESTIMONIOS)
+        ================================================================== -->
+        <section id="resultados" aria-labelledby="resultados-heading" class="py-20 sm:py-28 bg-pearl">
+            <div class="max-w-7xl mx-auto px-5 sm:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-6 reveal">
+                        <span class="text-[11px] uppercase tracking-[0.26em] text-blush-500 block mb-2.5">Transformaciones Reales</span>
+                        <h2 id="resultados-heading" class="font-serif text-3xl sm:text-4xl font-light text-plum-900 leading-tight mb-3">
+                            Armonía visible, <span class="italic text-blush-600">esencia intacta</span>
+                        </h2>
+                        <p class="text-plum-700 text-sm sm:text-base font-light mb-6">
+                            Desliza suavemente el control central para apreciar el resultado real tras 1 sesión de hidratación profunda y bioestimulación.
+                        </p>
+
+                        <div id="ba-slider" role="region" aria-label="Comparador interactivo de resultados antes y después" class="ba-container rounded-[2rem] shadow-pastel border border-blush-200/80 aspect-[4/3] bg-blush-50">
+                            <!-- Imagen DESPUÉS (Piel tersa y rejuvenecida) -->
+                            <img 
+                                src="img/piel-despues.avif" 
+                                alt="Resultado después del tratamiento de bioestimulación"
+                                loading="lazy"
+                                class="w-full h-full object-cover"
+                            >
+                            <span class="liquid-glass absolute top-4 right-4 z-10 text-plum-900 text-[11px] tracking-wider uppercase px-3.5 py-1.5 rounded-full">
+                                Después (30 días)
+                            </span>
+
+                            <!-- Imagen ANTES (Piel con líneas de expresión y manchas) -->
+                            <div id="ba-after-wrapper" class="ba-after-wrapper">
+                                <img 
+                                    src="img/piel-antes.jpg" 
+                                    alt="Estado de la piel antes del tratamiento"
+                                    loading="lazy"
+                                    class="w-full h-full object-cover"
+                                    style="width: 100%; max-width: none;"
+                                    id="ba-before-img"
+                                >
+                                <span class="bg-white/85 backdrop-blur-md absolute top-4 left-4 z-10 text-plum-700 text-[11px] tracking-wider uppercase px-3.5 py-1.5 rounded-full border border-white">
+                                    Antes
+                                </span>
+                            </div>
+
+                            <!-- Controlador Liquid Glass -->
+                            <div id="ba-handle" class="ba-handle" aria-hidden="true">
+                                <div class="ba-circle">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l-4 3 4 3m8-6l4 3-4 3"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-6 space-y-4 reveal">
+                        <div class="liquid-glass p-4 rounded-3xl flex items-center justify-between mb-2">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center font-serif text-xl text-blush-600 shadow-sm" aria-hidden="true">G</div>
+                                <div>
+                                    <p class="text-sm font-medium text-plum-900">Pacientes Verificadas en Google</p>
+                                    <p class="text-xs text-blush-500">★★★★★ <span class="text-plum-500 ml-1">4.9 / 5.0 (410+ reseñas)</span></p>
+                                </div>
+                            </div>
+                            <span class="hidden sm:inline-block text-[11px] text-blush-600 bg-blush-100/80 px-3 py-1 rounded-full">100% Reales</span>
+                        </div>
+
+                        <article class="liquid-glass p-5 rounded-3xl">
+                            <div class="flex items-center justify-between mb-2">
+                                <div>
+                                    <h3 class="text-sm font-medium text-plum-900">Mariana Castellanos</h3>
+                                    <p class="text-[11px] text-plum-500">Armonización Facial Sutil • Caracas</p>
+                                </div>
+                                <span class="text-blush-500 text-xs" aria-label="5 estrellas">★★★★★</span>
+                            </div>
+                            <p class="text-sm text-plum-700 font-light leading-relaxed">
+                                “Tenía temor de perder la naturalidad de mi rostro, pero la atención fue tan delicada y profesional que el resultado superó mis expectativas. Me veo descansada y luminosa.”
+                            </p>
+                        </article>
+
+                        <article class="liquid-glass p-5 rounded-3xl">
+                            <div class="flex items-center justify-between mb-2">
+                                <div>
+                                    <h3 class="text-sm font-medium text-plum-900">Valentina Mendoza</h3>
+                                    <p class="text-[11px] text-plum-500">Bioestimulación de Colágeno • Valencia</p>
+                                </div>
+                                <span class="text-blush-500 text-xs" aria-label="5 estrellas">★★★★★</span>
+                            </div>
+                            <p class="text-sm text-plum-700 font-light leading-relaxed">
+                                “El espacio transmite una paz increíble desde que entras. Cero dolor, puntualidad impecable y un seguimiento post-tratamiento muy humano.”
+                            </p>
+                        </article>
+
+                        <article class="liquid-glass p-5 rounded-3xl">
+                            <div class="flex items-center justify-between mb-2">
+                                <div>
+                                    <h3 class="text-sm font-medium text-plum-900">Camila Rodríguez</h3>
+                                    <p class="text-[11px] text-plum-500">Piel de Porcelana Láser • Lechería</p>
+                                </div>
+                                <span class="text-blush-500 text-xs" aria-label="5 estrellas">★★★★★</span>
+                            </div>
+                            <p class="text-sm text-plum-700 font-light leading-relaxed">
+                                “Logré eliminar manchas solares que llevaba años tratando. La textura de mi piel cambió por completo desde la segunda sesión.”
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================
+             5. RESERVA SIN FRICCIÓN (FORMULARIO + FAQ)
+        ================================================================== -->
+        <section id="agendar" aria-labelledby="agendar-heading" class="relative py-20 sm:py-28 bg-gradient-to-t from-blush-100/70 via-blush-50/60 to-pearl overflow-hidden">
+            <div class="pastel-orb w-[450px] h-[450px] bg-blush-200/40 bottom-0 right-10"></div>
+
+            <div class="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    
+                    <!-- FAQ -->
+                    <div class="lg:col-span-6 reveal">
+                        <span class="text-[11px] uppercase tracking-[0.26em] text-blush-500 block mb-2.5">Tranquilidad & Claridad</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-light text-plum-900 leading-tight mb-4">
+                            Preguntas frecuentes
+                        </h2>
+                        <p class="text-plum-700 text-sm sm:text-base font-light mb-8">
+                            Resolvemos tus inquietudes antes de tu primera visita.
+                        </p>
+
+                        <div class="space-y-3" id="faq-accordion">
+                            <div class="faq-item open liquid-glass rounded-3xl overflow-hidden">
+                                <button type="button" aria-expanded="true" class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-serif text-xl text-plum-900 cursor-pointer">
+                                    <span>¿Los tratamientos son dolorosos?</span>
+                                    <svg class="faq-icon w-4 h-4 text-blush-500 transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                                </button>
+                                <div class="faq-content px-6 pb-5 text-sm text-plum-700 font-light leading-relaxed">
+                                    No. Empleamos anestesia tópica de alta eficacia, microcánulas ultrafinas y protocolos suaves diseñados para que tu experiencia sea placentera.
+                                </div>
+                            </div>
+
+                            <div class="faq-item liquid-glass rounded-3xl overflow-hidden">
+                                <button type="button" aria-expanded="false" class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-serif text-xl text-plum-900 cursor-pointer">
+                                    <span>¿Requieren tiempo de reposo?</span>
+                                    <svg class="faq-icon w-4 h-4 text-blush-500 transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                                </button>
+                                <div class="faq-content px-6 pb-5 text-sm text-plum-700 font-light leading-relaxed">
+                                    Son procedimientos ambulatorios mínimamente invasivos. Puedes retomar tus actividades sociales o laborales el mismo día.
+                                </div>
+                            </div>
+
+                            <div class="faq-item liquid-glass rounded-3xl overflow-hidden">
+                                <button type="button" aria-expanded="false" class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-serif text-xl text-plum-900 cursor-pointer">
+                                    <span>¿Cómo es la valoración inicial?</span>
+                                    <svg class="faq-icon w-4 h-4 text-blush-500 transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                                </button>
+                                <div class="faq-content px-6 pb-5 text-sm text-plum-700 font-light leading-relaxed">
+                                    Realizamos un diagnóstico facial o corporal personalizado para escuchar tus objetivos y recomendarte únicamente lo que armonice contigo.
+                                </div>
+                            </div>
+
+                            <div class="faq-item liquid-glass rounded-3xl overflow-hidden">
+                                <button type="button" aria-expanded="false" class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-serif text-xl text-plum-900 cursor-pointer">
+                                    <span>¿Qué métodos de pago aceptan?</span>
+                                    <svg class="faq-icon w-4 h-4 text-blush-500 transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                                </button>
+                                <div class="faq-content px-6 pb-5 text-sm text-plum-700 font-light leading-relaxed">
+                                    Aceptamos Pago Móvil, Zelle, Binance (USDT), PayPal, Cashea y divisas en efectivo.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulario Ultra-Corto en Liquid Glass -->
+                    <div class="lg:col-span-6 reveal">
+                        <div class="liquid-glass rounded-[2.25rem] p-7 sm:p-10 shadow-pastel relative">
+                            <span class="inline-flex items-center gap-2 text-[11px] tracking-wider uppercase text-blush-600 bg-white/75 px-3.5 py-1 rounded-full mb-4 border border-white">
+                                <span class="w-1.5 h-1.5 rounded-full bg-blush-500 animate-ping"></span>
+                                Agenda abierta • Atención personalizada
+                            </span>
+
+                            <h2 id="agendar-heading" class="font-serif text-3xl sm:text-4xl font-light text-plum-900 mb-2">
+                                Reserva tu <span class="italic text-blush-600">Valoración</span>
+                            </h2>
+                            <p class="text-plum-700 text-sm font-light mb-6">
+                                Completa estos 3 datos y coordinaremos tu cita de inmediato vía WhatsApp.
+                            </p>
+
+                            <form id="lead-form" novalidate class="space-y-4">
+                                <div>
+                                    <label for="lead-name" class="block text-xs uppercase tracking-wider text-plum-700 mb-1.5">Tu Nombre *</label>
+                                    <input 
+                                        type="text" 
+                                        id="lead-name" 
+                                        required
+                                        maxlength="80"
+                                        autocomplete="name"
+                                        placeholder="Ej. Sofía Valentina Pérez"
+                                        class="w-full px-4 py-3.5 rounded-2xl bg-white/75 border border-white text-plum-900 placeholder-plum-300 focus:outline-none focus:border-blush-400 transition text-sm font-light"
+                                    >
+                                    <p id="error-name" role="alert" class="hidden text-xs text-blush-600 mt-1">Por favor indícanos tu nombre.</p>
+                                </div>
+
+                                <div>
+                                    <label for="lead-phone" class="block text-xs uppercase tracking-wider text-plum-700 mb-1.5">WhatsApp de contacto *</label>
+                                    <input 
+                                        type="tel" 
+                                        id="lead-phone" 
+                                        required
+                                        maxlength="18"
+                                        autocomplete="tel"
+                                        placeholder="Ej. 0412-1234567"
+                                        class="w-full px-4 py-3.5 rounded-2xl bg-white/75 border border-white text-plum-900 placeholder-plum-300 focus:outline-none focus:border-blush-400 transition text-sm font-light"
+                                    >
+                                    <p id="error-phone" role="alert" class="hidden text-xs text-blush-600 mt-1">Ingresa un número válido (mínimo 10 dígitos).</p>
+                                </div>
+
+                                <div>
+                                    <label for="lead-treatment" class="block text-xs uppercase tracking-wider text-plum-700 mb-1.5">Ritual de interés *</label>
+                                    <select 
+                                        id="lead-treatment"
+                                        class="w-full px-4 py-3.5 rounded-2xl bg-white/75 border border-white text-plum-900 focus:outline-none focus:border-blush-400 transition text-sm font-light"
+                                    >
+                                        <option value="Valoración Facial Integral">Valoración Facial Integral (Recomendado)</option>
+                                        <option value="Armonización Facial Sutil">01. Armonización Facial Sutil</option>
+                                        <option value="Piel de Porcelana & Láser">02. Piel de Porcelana & Láser</option>
+                                        <option value="Bioestimulación de Colágeno">03. Bioestimulación de Colágeno</option>
+                                        <option value="Contorno & Bienestar Corporal">04. Contorno & Bienestar Corporal</option>
+                                    </select>
+                                </div>
+
+                                <button type="submit" id="submit-btn" class="liquid-btn w-full py-4 px-6 rounded-full text-plum-900 text-xs sm:text-sm font-normal tracking-[0.18em] uppercase flex items-center justify-center gap-2.5 mt-3 cursor-pointer">
+                                    <span id="submit-text">Continuar a WhatsApp</span>
+                                    <svg id="submit-icon" class="w-4 h-4 text-blush-600" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg>
+                                </button>
+
+                                <p class="text-center text-[11px] text-plum-500 pt-1">
+                                    Confidencialidad médica garantizada • Sin compromiso
+                                </p>
+                            </form>
+
+                            <!-- Confirmación In-Page -->
+                            <div id="form-success-box" aria-live="polite" class="hidden text-center py-6">
+                                <div class="w-14 h-14 rounded-full liquid-glass-rose text-blush-600 flex items-center justify-center mx-auto mb-4 text-xl" aria-hidden="true">
+                                    ✓
+                                </div>
+                                <h3 class="font-serif text-3xl text-plum-900 mb-2">¡Solicitud Lista!</h3>
+                                <p id="success-message-detail" class="text-plum-700 font-light text-sm mb-6"></p>
+                                <a id="whatsapp-direct-link" href="#" target="_blank" rel="noopener noreferrer" class="liquid-btn inline-flex items-center justify-center px-7 py-3.5 rounded-full text-plum-900 text-xs uppercase tracking-widest">
+                                    Abrir Chat de WhatsApp
+                                </a>
+                                <button type="button" id="btn-reset-form" class="block mx-auto mt-4 text-xs text-plum-500 hover:text-plum-900 underline cursor-pointer">
+                                    Editar datos
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =====================================================================
+         FOOTER MINIMALISTA EDITORIAL
+    ====================================================================== -->
+    <footer class="bg-pearl text-plum-500 py-10 border-t border-blush-100">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-center sm:text-left">
+                <span class="font-serif text-2xl tracking-[0.18em] text-plum-900 lowercase">aurea</span>
+                <p class="text-xs text-plum-500 mt-1 font-light">Medicina Estética, Salud & Bienestar • Venezuela</p>
+            </div>
+            <div class="flex items-center gap-4 text-xs">
+                <button type="button" id="btn-footer-roi" class="text-blush-600 hover:text-blush-500 underline cursor-pointer font-normal">
+                    ¿Tienes una clínica estética? Simula tu ROI aquí
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         BOTÓN FLOTANTE DE WHATSAPP EN LIQUID GLASS
+    C====================================================================== -->
+    <a 
+        href="https://wa.me/584120000000?text=Hola%20AUREA%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20y%20agendar%20una%20valoraci%C3%B3n." 
+        target="_blank" 
+        rel="noopener noreferrer"
+        data-track="Floating_WhatsApp_Click"
+        aria-label="Contactar por WhatsApp"
+        class="liquid-btn fixed bottom-5 right-5 z-50 flex items-center gap-2.5 px-5 py-3.5 rounded-full text-plum-900 text-xs tracking-widest uppercase"
+    >
+        <span class="w-2 h-2 rounded-full bg-blush-500 animate-pulse"></span>
+        <span>WhatsApp</span>
+    </a>
+
+    <!-- Toast de Notificación Sutil -->
+    <div id="toast-notification" role="status" aria-live="polite" class="hidden fixed bottom-20 left-1/2 -translate-x-1/2 z-50 liquid-glass text-plum-900 text-xs px-5 py-3 rounded-full shadow-pastel flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-blush-500"></span>
+        <span id="toast-text"></span>
+    </div>
+
+    <!-- Script Modular -->
+    <script src="js/app.js" defer></script>
+</body>
+</html>

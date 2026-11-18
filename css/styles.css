@@ -1,0 +1,217 @@
+/* =========================================================================
+   BASE ULTRA DELICADA Y LUMINOSA
+========================================================================= */
+html, body {
+    font-size: 16px;
+    color: #3B2C32;
+    background-color: #FFFDFD;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* =========================================================================
+   SISTEMA LIQUID GLASS (VIDRIO LÍQUIDO TRANSLÚCIDO)
+========================================================================= */
+.liquid-glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0%, rgba(252, 238, 242, 0.45) 100%);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 
+        inset 0 1px 1px rgba(255, 255, 255, 0.95),
+        inset 0 -1px 2px rgba(201, 123, 147, 0.08),
+        0 12px 32px -8px rgba(201, 123, 147, 0.16);
+}
+
+.liquid-glass-rose {
+    background: linear-gradient(135deg, rgba(248, 220, 229, 0.65) 0%, rgba(255, 255, 255, 0.55) 100%);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 
+        inset 0 1px 2px rgba(255, 255, 255, 0.95),
+        0 10px 28px -6px rgba(201, 123, 147, 0.24);
+}
+
+.liquid-btn {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.78) 0%, rgba(248, 220, 229, 0.58) 100%);
+    backdrop-filter: blur(16px) saturate(170%);
+    -webkit-backdrop-filter: blur(16px) saturate(170%);
+    border: 1px solid rgba(255, 255, 255, 0.92);
+    box-shadow: 
+        inset 0 1px 1px rgba(255, 255, 255, 1),
+        0 8px 24px -4px rgba(201, 123, 147, 0.22);
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.liquid-btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(241, 194, 209, 0.72) 100%);
+    box-shadow: 
+        inset 0 1px 2px rgba(255, 255, 255, 1),
+        0 14px 30px -4px rgba(201, 123, 147, 0.32);
+}
+
+.liquid-btn:active {
+    transform: translateY(0);
+}
+
+/* =========================================================================
+   LISTA INTERACTIVA DEL HERO
+========================================================================= */
+.hero-ritual-item {
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+}
+
+.hero-ritual-item::before {
+    content: '';
+    position: absolute;
+    left: -18px;
+    top: 50%;
+    transform: translateY(-50%) scaleX(0);
+    width: 10px;
+    height: 1px;
+    background-color: #C97B93;
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+
+.hero-ritual-item.active,
+.hero-ritual-item:hover {
+    color: #A95D75;
+    transform: translateX(14px);
+}
+
+.hero-ritual-item.active::before,
+.hero-ritual-item:hover::before {
+    transform: translateY(-50%) scaleX(1);
+}
+
+/* =========================================================================
+   TRANSICIONES Y ANIMACIONES DE ENTRADA
+========================================================================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ritual-fade {
+    animation: ritualAppear 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes ritualAppear {
+    from { opacity: 0; transform: translateY(10px) scale(0.99); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* =========================================================================
+   COMPARADOR ANTES Y DESPUÉS (OPTIMIZADO MÓVIL Y TABLET)
+========================================================================= */
+.ba-container {
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    touch-action: pan-y;
+}
+
+.ba-after-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ba-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 15px rgba(201, 123, 147, 0.45);
+    cursor: ew-resize;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+.ba-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    color: #A95D75;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(201, 123, 147, 0.25);
+}
+
+/* =========================================================================
+   ACORDEÓN FAQ, ETIQUETAS B2B Y ORBES AMBIENTALES
+========================================================================= */
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.faq-item.open .faq-content {
+    max-height: 280px;
+}
+
+.faq-item.open .faq-icon {
+    transform: rotate(180deg);
+}
+
+.b2b-badge {
+    display: none;
+    animation: ritualAppear 0.3s ease forwards;
+}
+
+body.b2b-mode .b2b-badge {
+    display: inline-flex;
+}
+
+.pastel-orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* =========================================================================
+   ADAPTABILIDAD RESPONSIVE (SMARTPHONES Y TABLETS / IPADS)
+========================================================================= */
+@media (max-width: 640px) {
+    html, body {
+        font-size: 15px;
+    }
+}
+
+@media (hover: none) {
+    .liquid-btn:hover {
+        transform: none;
+    }
+}
