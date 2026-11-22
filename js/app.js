@@ -2,7 +2,7 @@
 
 /**
  * =========================================================================
- * AUREA CLINIC — ARQUITECTURA MODULAR BAJO PRINCIPIOS SOLID
+ * AUREA CLINIC — ARQUITECTURA MODULAR 
  * =========================================================================
  */
 
